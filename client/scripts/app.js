@@ -6,7 +6,7 @@ var App = {
 
   $spinner: $('.spinner img'),
 
-  username: 'anonymous',
+  username: 'anonymous', // needs to be my username from github which is stored in the API right now?
 
   initialize: function() {
     App.username = window.location.search.substr(10);

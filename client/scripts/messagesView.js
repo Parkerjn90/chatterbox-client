@@ -12,10 +12,12 @@ var MessagesView = {
 
   render: function() {
     // TODO: Render _all_ the messages.
+
   },
 
   renderMessage: function(message) {
     // TODO: Render a single message.
+
   },
 
   handleClick: function(event) {
