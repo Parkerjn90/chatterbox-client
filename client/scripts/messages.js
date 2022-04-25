@@ -5,22 +5,34 @@
 var Messages = {
 
   // TODO: Define how you want to store your messages.
-  _data: {},
+  _data: [],
 
   // TODO: Define methods which allow you to retrieve from,
   // add to, and generally interact with the messages.
 
   //add each object from server to _data array
   retrieve: function (dataList) {
+    var newData = [];
     // for each element of data(object) being returned,
     for (var eachMessage of dataList) {
-      // object key = eachMessage's messageID, assign each message to objectkey
-      Messages._data[eachMessage.message_id] = eachMessage;
+      // if data array is empty, push each element into data array
+      if (!Messages._data.length) {
+        // object key = eachMessage's messageID, assign each message to objectkey
+        newData.push(eachMessage);
+      } else if (eachMessage.message_id > Messages._data[0].message_id) {
+        newData.push(eachMessage);
+      }
     }
+    Messages._data = newData.concat(Messages._data);
   },
 
-  add: function () {
+  add: function (message) {
+    // add to beginning of data list
+    Messages._data.unshift(message);
+  },
 
+  interact: function() {
+    return Messages._data;
   }
 
 };

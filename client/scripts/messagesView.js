@@ -9,18 +9,26 @@ var MessagesView = {
     // TODO: Perform any work which needs to be done
     // when this view loads.
     // remove old messages
+    MessagesView.$chats.remove();
     // render new messages
+    MessagesView.render();
   },
 
   render: function() {
-    // TODO: Render _all_ the messages.
-    // append each new message to #chats
+    // TODO: Render _all_ the messages.;
+    var listOfMessages = new Messages.interact();
+    for(var eachMessage of Messages._data) {
+      // append each new message to #chats
+      var newHTML = MessagesView.renderMessage(eachMessage);
+      $('#chats').append(newHTML);
+    }
+
   },
 
   renderMessage: function(message) {
     // TODO: Render a single message.
-    // retrieve each message from data list
     // render each message into the appropriate template
+    return messageView.render(message);
     // return each message converted to html
   },
 
