@@ -9,7 +9,7 @@ var MessagesView = {
     // TODO: Perform any work which needs to be done
     // when this view loads.
     // remove old messages
-    MessagesView.$chats.remove();
+    MessagesView.$chats.empty();
     // render new messages
     MessagesView.render();
   },
@@ -27,8 +27,10 @@ var MessagesView = {
 
   renderMessage: function(message) {
     // TODO: Render a single message.
-    // render each message into the appropriate template
-    return messageView.render(message);
+    // console.log(MessageView.render(message));
+    return MessageView.render(message);
+    // // render each message into the appropriate template
+    // return compiled;
     // return each message converted to html
   },
 

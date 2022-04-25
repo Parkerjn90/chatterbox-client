@@ -35,7 +35,11 @@ var App = {
 
       // push each message object (in data?) to messages._data array
       new Messages.retrieve(data);
-      new MessagesView.initialize();
+      setTimeout(function() {
+        var start = new MessagesView.initialize();
+        return start;
+      }, 1000);
+
       //AND each room added to the rooms._data array
     });
   },
